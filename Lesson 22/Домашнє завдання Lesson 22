@@ -1,0 +1,17 @@
+erDiagram
+    Shopping_List ||--o{ Fridge : "1:N (Item_ID)"
+
+    Shopping_List {
+        INT ID PK "Первинний ключ"
+        VARCHAR_50 Product_Name "Назва продукту"
+        DECIMAL_5_2 Price "Ціна"
+        TINYINT Quantity "Кількість"
+    }
+
+    Fridge {
+        INT Product_ID "Ідентифікатор продукту"
+        INT Item_ID FK "Зовнішній ключ (Shopping_List.ID)"
+        VARCHAR_20 Product_Name "Назва продукту"
+        DECIMAL_2_1 Quantity "Кількість"
+        DATE Expiration_Date "Термін придатності"
+    }
